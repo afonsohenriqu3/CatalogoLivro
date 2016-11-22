@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CatalogoLivro.AcessoDados;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,8 @@ namespace CatalogoLivro
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer<LivroContexto>(new LivrosInit());
         }
     }
 }
